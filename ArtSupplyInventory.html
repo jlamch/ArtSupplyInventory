@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Pencil Colors Database</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .controls {
+            padding: 20px 30px;
+            border-bottom: 1px solid #eee;
+            background: #f8f9fa;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .filter-group label {
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        select, input, button {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            background: #5a6fd8;
+            transform: translateY(-1px);
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .stats {
+            padding: 15px 30px;
+            background: #f1f3f4;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 30px;
+            font-weight: 600;
+            color: #495057;
+            flex-wrap: wrap;
+        }
+        
+        .inventory-stats {
+            color: #28a745;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            max-height: 70vh;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        
+        th {
+            background: #495057;
+            color: white;
+            padding: 15px 12px;
+            text-align: left;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .color-swatch {
+            width: 40px;
+            height: 25px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        .set-badge {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .set-procolour { background: #28a745; }
+        .set-lightfast { background: #17a2b8; }
+        .set-coloursoft { background: #ffc107; color: #333; }
+        .set-luminance6901 { background: #dc3545; }
+        .set-neocolorii { background: #fd7e14; }
+        .set-pablo { background: #6f42c1; }
+        
+        .lightfastness {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .lf-indicator {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .lf-poor { background: #dc3545; }
+        .lf-fair { background: #fd7e14; }
+        .lf-moderate { background: #ffc107; color: #333; }
+        .lf-good { background: #20c997; }
+        .lf-very-good { background: #198754; }
+        .lf-excellent { background: #0d6efd; }
+        
+        .export-section {
+            padding: 20px 30px;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        
+        .download-btn {
+            background: #28a745;
+            padding: 12px 25px;
+            font-size: 16px;
+            margin: 0 10px;
+        }
+        
+        .download-btn:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 Complete Pencil Colors Database</h1>
+            <p>Derwent (ProColour, Lightfast, Coloursoft) & Caran d'Ache (Luminance 6901, Neocolor II, Pablo) with lightfastness ratings and inventory tracking</p>
+        </div>
+        
+        <div class="controls">
+            <div class="filter-group">
+                <label for="setFilter">Set:</label>
+                <select id="setFilter">
+                    <option value="">All Sets</option>
+                    <optgroup label="Derwent">
+                        <option value="ProColour">ProColour</option>
+                        <option value="Lightfast">Lightfast</option>
+                        <option value="Coloursoft">Coloursoft</option>
+                    </optgroup>
+                    <optgroup label="Caran d'Ache">
+                        <option value="Luminance 6901">Luminance 6901</option>
+                        <option value="Neocolor II">Neocolor II</option>
+                        <option value="Pablo">Pablo</option>
+                    </optgroup>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="lightfastnessFilter">Lightfastness:</label>
+                <select id="lightfastnessFilter">
+                    <option value="">All Ratings</option>
+                    <option value="1-3">Poor/Fair (1-3)</option>
+                    <option value="4-5">Moderate/Good (4-5)</option>
+                    <option value="6-8">Very Good/Excellent (6-8)</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="inventoryFilter">Show:</label>
+                <select id="inventoryFilter">
+                    <option value="">All Colors</option>
+                    <option value="owned">Owned Only</option>
+                    <option value="missing">Missing Only</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="searchInput">Search:</label>
+                <input type="text" id="searchInput" placeholder="Color name or code...">
+            </div>
+            
+            <button onclick="clearFilters()">Clear Filters</button>
+            <button onclick="exportInventory()">📦 Export Inventory</button>
+            <button onclick="importInventory()">📥 Import Inventory</button>
+            <input type="file" id="inventoryFileInput" accept=".json,.csv" style="display: none;">
+        </div>
+        
+        <div class="stats">
+            <span>Total Colors: <span id="totalCount">0</span></span>
+            <span>Derwent: <span id="derwentCount">0</span></span>
+            <span>Caran d'Ache: <span id="carandacheCount">0</span></span>
+            <span class="inventory-stats">✅ Owned: <span id="ownedCount">0</span></span>
+            <span class="inventory-stats">📋 Missing: <span id="missingCount">0</span></span>
+            <span class="inventory-stats">📊 Completion: <span id="completionRate">0%</span></span>
+        </div>
+        
+        <div class="loading" id="loadingIndicator">
+            Loading pencil color data...
+        </div>
+        
+        <div class="table-container" id="tableContainer" style="display: none;">
+            <table id="colorsTable">
+                <thead>
+                    <tr>
+                        <th>Own</th>
+                        <th>Color</th>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Number</th>
+                        <th>Set</th>
+                        <th>Lightfastness</th>
+                        <th>Hex Color</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="export-section">
+            <h3>Export & Inventory Management</h3>
+            <div style="margin-bottom: 20px;">
+                <h4>📦 Inventory Management</h4>
+                <button class="download-btn" onclick="exportInventory()">💾 Save Inventory</button>
+                <button class="download-btn" onclick="importInventory()">📥 Load Inventory</button>
+                <button class="download-btn" onclick="clearInventory()" style="background: #dc3545;">🗑️ Clear All</button>
+            </div>
+            <div>
+                <h4>📊 Export Database</h4>
+                <p>Download the complete database in your preferred format:</p>
+                <button class="download-btn" onclick="downloadCSV()">📊 Download CSV</button>
+                <button class="download-btn" onclick="downloadJSON()">📄 Download JSON</button>
+                <button class="download-btn" onclick="copyToClipboard()">📋 Copy to Clipboard</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let colorsDatabase = [];
+        let filteredData = [];
+        let inventory = new Set();
+
+        // Data sources - these would be separate JSON files
+        const dataSources = [
+            { file: 'derwent-procolour.json', loaded: false },
+            { file: 'derwent-lightfast.json', loaded: false },
+            { file: 'derwent-coloursoft.json', loaded: false },
+            { file: 'caran-luminance.json', loaded: false },
+            { file: 'caran-neocolor.json', loaded: false },
+            { file: 'caran-pablo.json', loaded: false }
+        ];
+
+        // For demo purposes, we'll include the data inline
+        // In a real implementation, these would be loaded from separate JSON files
+        async function loadAllData() {
+            try {
+                // Simulating loading from files - in reality you'd use fetch()
+                const allData = [
+                    ...getDerwentProColourData(),
+                    ...getDerwentLightfastData(),
+                    ...getDerwentColoursoftData(),
+                    ...getCaranLuminanceData(),
+                    ...getCaranNeocolorData(),
+                    ...getCaranPabloData()
+                ];
+                
+                colorsDatabase = allData;
+                filteredData = [...colorsDatabase];
+                
+                document.getElementById('loadingIndicator').style.display = 'none';
+                document.getElementById('tableContainer').style.display = 'block';
+                
+                loadInventory();
+                renderTable();
+                updateStats();
+            } catch (error) {
+                console.error('Error loading data:', error);
+                document.getElementById('loadingIndicator').textContent = 'Error loading data. Please refresh the page.';
+            }
+        }
+
+        // Sample data functions (in reality these would be JSON files)
+        function getDerwentProColourData() {
+            return [
+                {code: "2302433", name: "Lime", number: "01", lightfastness: 5, lightfastnessType: "BW", set: "ProColour", hexColor: "#32CD32"},
+                {code: "2302434", name: "Primrose Yellow", number: "02", lightfastness: 1, lightfastnessType: "BW", set: "ProColour", hexColor: "#FFF8B7"},
+                {code: "2302435", name: "Buttercup Yellow", number: "03", lightfastness: 6, lightfastnessType: "BW", set: "ProColour", hexColor: "#FCE883"},
+                {code: "2302436", name: "Champagne", number: "04", lightfastness: 8, lightfastnessType: "BW", set: "ProColour", hexColor: "#F7E7CE"},
+                {code: "2302437", name: "Gold", number: "05", lightfastness: 7, lightfastnessType: "BW", set: "ProColour", hexColor: "#FFD700"},
+                // ... Additional ProColour colors would be here
+                {code: "2302504", name: "Chinese White", number: "72", lightfastness: 8, lightfastnessType: "BW", set: "ProColour", hexColor: "#F7F7F7"}
+            ];
+        }
+
+        function getDerwentLightfastData() {
+            return [
+                {code: "2305694", name: "Banana", number: "", lightfastness: 2, lightfastnessType: "LF", set: "Lightfast", hexColor: "#FFE135"},
+                {code: "2302648", name: "Sun Yellow", number: "", lightfastness: 1, lightfastnessType: "LF", set: "Lightfast", hexColor: "#FFD700"},
+                {code: "2305695", name: "Yellow", number: "", lightfastness: 2, lightfastnessType: "LF", set: "Lightfast", hexColor: "#FFFF00"},
+                // ... Additional Lightfast colors would be here
+                {code: "2302718", name: "White", number: "", lightfastness: 1, lightfastnessType: "LF", set: "Lightfast", hexColor: "#FFFFFF"}
+            ];
+        }
+
+        function getDerwentColoursoftData() {
+            return [
+                {code: "0700953", name: "Cream", number: "C010", lightfastness: 8, lightfastnessType: "BW", set: "Coloursoft", hexColor: "#FFFDD0"},
+                {code: "0700954", name: "Acid Yellow", number: "C020", lightfastness: 6, lightfastnessType: "BW", set: "Coloursoft", hexColor: "#B0BF1A"},
+                {code: "0700955", name: "Lemon Yellow", number: "C030", lightfastness: 8, lightfastnessType: "BW", set: "Coloursoft", hexColor: "#FFFACD"},
+                // ... Additional Coloursoft colors would be here
+                {code: "0701024", name: "White", number: "C720", lightfastness: 8, lightfastnessType: "BW", set: "Coloursoft", hexColor: "#FFFFFF"}
+            ];
+        }
+
+        function getCaranLuminanceData() {
+            return [
+                {code: "L001", name: "White", number: "001", lightfastness: "LFI", lightfastnessType: "ASTM", set: "Luminance 6901", hexColor: "#FFFFFF"},
+                {code: "L581", name: "Pink White", number: "581", lightfastness: "LFI", lightfastnessType: "ASTM", set: "Luminance 6901", hexColor: "#FDF0F0"},
+                {code: "L801", name: "Buff Titanium", number: "801", lightfastness: "LFII", lightfastnessType: "ASTM", set: "Luminance 6901", hexColor: "#F5E6D3"},
+                // ... Additional Luminance colors would be here
+                {code: "L719", name: "Dark Phthalocyanine Green", number: "719", lightfastness: "LFI", lightfastnessType: "ASTM", set: "Luminance 6901", hexColor: "#355E3B"}
+            ];
+        }
+
+        function getCaranNeocolorData() {
+            return [
+                {code: "N001", name: "White", number: "001", lightfastness: "HHH", lightfastnessType: "Blue Wool", set: "Neocolor II", hexColor: "#FFFFFF"},
+                {code: "N521", name: "Sahara Yellow", number: "521", lightfastness: "HHH", lightfastnessType: "Blue Wool", set: "Neocolor II", hexColor: "#F4E4BC"},
+                {code: "N031", name: "Orangish Yellow", number: "031", lightfastness: "HHH", lightfastnessType: "Blue Wool", set: "Neocolor II", hexColor: "#FFE135"},
+                // ... Additional Neocolor colors would be here
+                {code: "N497", name: "Bronze", number: "497", lightfastness: "HH", lightfastnessType: "Blue Wool", set: "Neocolor II", hexColor: "#CD7F32"}
+            ];
+        }
+
+        function getCaranPabloData() {
+            return [
+                {code: "P001", name: "White", number: "001", lightfastness: "HHH", lightfastnessType: "Blue Wool", set: "Pablo", hexColor: "#FFFFFF"},
+                {code: "P350", name: "Purplish Red", number: "350", lightfastness: "HHH", lightfastnessType: "Blue Wool", set: "Pablo", hexColor: "#B22222"},
+                {code: "P402", name: "Light Beige", number: "402", lightfastness: "HH", lightfastnessType: "Blue Wool", set: "Pablo", hexColor: "#F5F5DC"},
+                // ... Additional Pablo colors would be here
+                {code: "P220", name: "Grass Green", number: "220", lightfastness: "HHH", lightfastnessType: "Blue Wool", set: "Pablo", hexColor: "#7CFC00"}
+            ];
+        }
+
+        // Load inventory from localStorage
+        function loadInventory() {
+            const saved = localStorage.getItem('pencil_inventory');
+            if (saved) {
+                try {
+                    const data = JSON.parse(saved);
+                    inventory = new Set(data);
+                } catch (e) {
+                    console.error('Error loading inventory:', e);
+                    inventory = new Set();
+                }
+            }
+        }
+
+        // Save inventory to localStorage
+        function saveInventory() {
+            localStorage.setItem('pencil_inventory', JSON.stringify([...inventory]));
+        }
+
+        function renderTable() {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+
+            filteredData.forEach(color => {
+                const row = document.createElement('tr');
+                
+                const lightfastnessClass = getLightfastnessClass(color.lightfastness);
+                const lightfastnessText = typeof color.lightfastness === 'string' ? color.lightfastness : color.lightfastness.toString();
+                const isOwned = inventory.has(color.code);
+                
+                row.innerHTML = `
+                    <td>
+                        <input type="checkbox" 
+                               id="own_${color.code}" 
+                               ${isOwned ? 'checked' : ''} 
+                               onchange="toggleOwnership('${color.code}')">
+                    </td>
+                    <td>
+                        <div class="color-swatch" style="background-color: ${color.hexColor}"></div>
+                    </td>
+                    <td><strong>${color.code}</strong></td>
+                    <td>${color.name}</td>
+                    <td>${color.number}</td>
+                    <td><span class="set-badge set-${color.set.toLowerCase().replace(/\s+/g, '').replace('6901', '6901')}">${color.set}</span></td>
+                    <td>
+                        <div class="lightfastness">
+                            <div class="lf-indicator ${lightfastnessClass}">${lightfastnessText}</div>
+                            <small>${color.lightfastnessType}</small>
+                        </div>
+                    </td>
+                    <td><code>${color.hexColor}</code></td>
+                `;
+                
+                if (isOwned) {
+                    row.style.backgroundColor = '#f8fff8';
+                    row.style.borderLeft = '4px solid #28a745';
+                }
+                
+                tbody.appendChild(row);
+            });
+        }
+
+        function toggleOwnership(colorCode) {
+            if (inventory.has(colorCode)) {
+                inventory.delete(colorCode);
+            } else {
+                inventory.add(colorCode);
+            }
+            saveInventory();
+            renderTable();
+            updateStats();
+        }
+
+        function getLightfastnessClass(rating) {
+            if (typeof rating === 'string') {
+                if (rating.includes('HHH') || rating === 'LFI') return 'lf-excellent';
+                if (rating.includes('HH') || rating === 'LFII') return 'lf-very-good';
+                if (rating.includes('H')) return 'lf-good';
+                const nums = rating.split('/').map(n => parseInt(n));
+                rating = Math.max(...nums);
+            }
+            
+            if (rating <= 3) return 'lf-poor';
+            if (rating <= 4) return 'lf-fair';
+            if (rating <= 5) return 'lf-moderate';
+            if (rating <= 6) return 'lf-good';
+            if (rating <= 7) return 'lf-very-good';
+            return 'lf-excellent';
+        }
+
+        function updateStats() {
+            const ownedColors = colorsDatabase.filter(c => inventory.has(c.code));
+            const ownedCount = ownedColors.length;
+            const missingCount = colorsDatabase.length - ownedCount;
+            const completionRate = Math.round((ownedCount / colorsDatabase.length) * 100);
+
+            const derwentCount = filteredData.filter(c => ['ProColour', 'Lightfast', 'Coloursoft'].includes(c.set)).length;
+            const carandacheCount = filteredData.filter(c => ['Luminance 6901', 'Neocolor II', 'Pablo'].includes(c.set)).length;
+
+            document.getElementById('totalCount').textContent = filteredData.length;
+            document.getElementById('derwentCount').textContent = derwentCount;
+            document.getElementById('carandacheCount').textContent = carandacheCount;
+            document.getElementById('ownedCount').textContent = ownedCount;
+            document.getElementById('missingCount').textContent = missingCount;
+            document.getElementById('completionRate').textContent = `${completionRate}%`;
+        }
+
+        function applyFilters() {
+            const setFilter = document.getElementById('setFilter').value;
+            const lightfastnessFilter = document.getElementById('lightfastnessFilter').value;
+            const inventoryFilter = document.getElementById('inventoryFilter').value;
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+
+            filteredData = colorsDatabase.filter(color => {
+                const matchesSet = !setFilter || color.set === setFilter;
+                
+                let matchesLightfastness = true;
+                if (lightfastnessFilter) {
+                    let rating = color.lightfastness;
+                    if (typeof rating === 'string') {
+                        if (rating.includes('HHH') || rating === 'LFI') rating = 8;
+                        else if (rating.includes('HH') || rating === 'LFII') rating = 7;
+                        else if (rating.includes('H')) rating = 6;
+                        else {
+                            const nums = rating.split('/').map(n => parseInt(n));
+                            rating = Math.max(...nums);
+                        }
+                    }
+                    
+                    if (lightfastnessFilter === '1-3') matchesLightfastness = rating <= 3;
+                    else if (lightfastnessFilter === '4-5') matchesLightfastness = rating >= 4 && rating <= 5;
+                    else if (lightfastnessFilter === '6-8') matchesLightfastness = rating >= 6;
+                }
+
+                let matchesInventory = true;
+                if (inventoryFilter === 'owned') matchesInventory = inventory.has(color.code);
+                else if (inventoryFilter === 'missing') matchesInventory = !inventory.has(color.code);
+                
+                const matchesSearch = !searchInput || 
+                    color.name.toLowerCase().includes(searchInput) ||
+                    color.code.toLowerCase().includes(searchInput) ||
+                    color.number.toLowerCase().includes(searchInput);
+
+                return matchesSet && matchesLightfastness && matchesInventory && matchesSearch;
+            });
+
+            renderTable();
+            updateStats();
+        }
+
+        function clearFilters() {
+            document.getElementById('setFilter').value = '';
+            document.getElementById('lightfastnessFilter').value = '';
+            document.getElementById('inventoryFilter').value = '';
+            document.getElementById('searchInput').value = '';
+            filteredData = [...colorsDatabase];
+            renderTable();
+            updateStats();
+        }
+
+        // Inventory management functions
+        function exportInventory() {
+            const ownedColors = colorsDatabase.filter(color => inventory.has(color.code));
+            const inventoryData = {
+                exportDate: new Date().toISOString(),
+                totalOwned: ownedColors.length,
+                completionRate: Math.round((ownedColors.length / colorsDatabase.length) * 100),
+                ownedColors: ownedColors.map(color => ({
+                    code: color.code,
+                    name: color.name,
+                    number: color.number,
+                    set: color.set,
+                    hexColor: color.hexColor
+                })),
+                ownedCodes: [...inventory]
+            };
+
+            const jsonContent = JSON.stringify(inventoryData, null, 2);
+            const blob = new Blob([jsonContent], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `pencil_inventory_${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function importInventory() {
+            document.getElementById('inventoryFileInput').click();
+        }
+
+        function handleInventoryFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const content = e.target.result;
+                    let importedCodes = [];
+
+                    if (file.name.endsWith('.json')) {
+                        const data = JSON.parse(content);
+                        importedCodes = data.ownedCodes || data;
+                    } else if (file.name.endsWith('.csv')) {
+                        importedCodes = content.split(/[,\n\r]/)
+                            .map(code => code.trim())
+                            .filter(code => code.length > 0);
+                    }
+
+                    const validCodes = importedCodes.filter(code => 
+                        colorsDatabase.some(color => color.code === code)
+                    );
+
+                    if (validCodes.length > 0) {
+                        inventory = new Set(validCodes);
+                        saveInventory();
+                        renderTable();
+                        updateStats();
+                        alert(`Successfully imported ${validCodes.length} colors to your inventory!`);
+                    } else {
+                        alert('No valid color codes found in the file.');
+                    }
+                } catch (error) {
+                    alert('Error reading file. Please check the format and try again.');
+                    console.error('Import error:', error);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function clearInventory() {
+            if (confirm('Are you sure you want to clear your entire inventory? This cannot be undone.')) {
+                inventory.clear();
+                saveInventory();
+                renderTable();
+                updateStats();
+                alert('Inventory cleared successfully.');
+            }
+        }
+
+        function downloadCSV() {
+            const headers = ['Owned', 'Code', 'Name', 'Number', 'Set', 'Lightfastness', 'Lightfastness Type', 'Hex Color'];
+            const csvContent = [
+                headers.join(','),
+                ...filteredData.map(color => [
+                    inventory.has(color.code) ? 'Yes' : 'No',
+                    color.code,
+                    `"${color.name}"`,
+                    color.number,
+                    color.set,
+                    color.lightfastness,
+                    color.lightfastnessType,
+                    color.hexColor
+                ].join(','))
+            ].join('\n');
+
+            const blob = new Blob([csvContent], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'pencil_colors_with_inventory.csv';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function downloadJSON() {
+            const jsonData = filteredData.map(color => ({
+                ...color,
+                owned: inventory.has(color.code)
+            }));
+            const jsonContent = JSON.stringify(jsonData, null, 2);
+            const blob = new Blob([jsonContent], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'pencil_colors_with_inventory.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function copyToClipboard() {
+            const headers = ['Owned', 'Code', 'Name', 'Number', 'Set', 'Lightfastness', 'Lightfastness Type', 'Hex Color'];
+            const csvContent = [
+                headers.join('\t'),
+                ...filteredData.map(color => [
+                    inventory.has(color.code) ? 'Yes' : 'No',
+                    color.code,
+                    color.name,
+                    color.number,
+                    color.set,
+                    color.lightfastness,
+                    color.lightfastnessType,
+                    color.hexColor
+                ].join('\t'))
+            ].join('\n');
+
+            navigator.clipboard.writeText(csvContent).then(() => {
+                alert('Data copied to clipboard! You can now paste it into Excel.');
+            });
+        }
+
+        // Event listeners
+        document.getElementById('setFilter').addEventListener('change', applyFilters);
+        document.getElementById('lightfastnessFilter').addEventListener('change', applyFilters);
+        document.getElementById('inventoryFilter').addEventListener('change', applyFilters);
+        document.getElementById('searchInput').addEventListener('input', applyFilters);
+        document.getElementById('inventoryFileInput').addEventListener('change', handleInventoryFile);
+
+        // Initialize the application
+        loadAllData();
+    </script>
+</body>
+</html>
