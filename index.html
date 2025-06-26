@@ -171,6 +171,11 @@
         .set-luminance6901 { background: #a92b37; }
         .set-neocolorii { background: #d46912; }
         .set-pablo { background: #553492; }
+        .set-graphitint { background: #5c6370; }
+        .set-drawing { background: #2c3e50; }
+        .set-polychromos { background: #8b4513; }
+        .set-albrechtdürer { background: #4682b4; }
+        .set-pittpastel { background: #9932cc; }
         
         .lightfastness {
             display: flex;
@@ -271,7 +276,7 @@
                     <optgroup label="Faber-Castell">
                         <option value="Polychromos">Polychromos</option>
                         <option value="Albrecht Dürer">Albrecht Dürer</option>
-                        <option value="Pitt Pastels">Pitt Pastels</option>
+                        <option value="Pitt Pastel">Pitt Pastel</option>
                     </optgroup>
                 </select>
             </div>
@@ -328,6 +333,8 @@
             <span>Total Colors: <span id="totalCount">0</span></span>
             <span>Derwent: <span id="derwentCount">0</span></span>
             <span>Caran d'Ache: <span id="carandacheCount">0</span></span>
+            <span>Faber-Castell: <span id="faberCount">0</span></span>
+            <span id="selectedSetCount" style="display: none; color: #667eea; font-weight: bold;">📌 Selected Set: <span id="selectedSetCountValue">0</span></span>
             <span class="inventory-stats">✅ Owned: <span id="ownedCount">0</span></span>
             <span class="inventory-stats">📋 Missing: <span id="missingCount">0</span></span>
             <span class="inventory-stats">📊 Completion: <span id="completionRate">0%</span></span>
@@ -446,6 +453,8 @@
                 // Show which files loaded successfully
                 const loadedFiles = dataSources.filter(s => s.loaded).length;
                 const totalFiles = dataSources.length;
+                console.log('Loaded files:', dataSources.filter(s => s.loaded).map(s => s.file));
+                console.log('Failed files:', dataSources.filter(s => !s.loaded).map(s => s.file));
                 if (loadedFiles < totalFiles) {
                     console.warn(`Loaded ${loadedFiles}/${totalFiles} data files. Some data may be missing.`);
                 }
@@ -677,12 +686,25 @@
             const missingCount = colorsDatabase.length - ownedCount;
             const completionRate = colorsDatabase.length > 0 ? Math.round((ownedCount / colorsDatabase.length) * 100) : 0;
 
-            const derwentCount = filteredData.filter(c => ['ProColour', 'Lightfast', 'Coloursoft'].includes(c.set)).length;
+            const derwentCount = filteredData.filter(c => ['ProColour', 'Lightfast', 'Coloursoft', 'Graphitint', 'Drawing'].includes(c.set)).length;
             const carandacheCount = filteredData.filter(c => ['Luminance 6901', 'Neocolor II', 'Pablo'].includes(c.set)).length;
+            const faberCount = filteredData.filter(c => ['Polychromos', 'Albrecht Dürer', 'Pitt Pastel'].includes(c.set)).length;
+
+            // Handle selected set count display
+            const setFilter = document.getElementById('setFilter').value;
+            const selectedSetCountElement = document.getElementById('selectedSetCount');
+            if (setFilter) {
+                const selectedSetCount = colorsDatabase.filter(c => c.set === setFilter).length;
+                document.getElementById('selectedSetCountValue').textContent = selectedSetCount;
+                selectedSetCountElement.style.display = 'inline';
+            } else {
+                selectedSetCountElement.style.display = 'none';
+            }
 
             document.getElementById('totalCount').textContent = filteredData.length;
             document.getElementById('derwentCount').textContent = derwentCount;
             document.getElementById('carandacheCount').textContent = carandacheCount;
+            document.getElementById('faberCount').textContent = faberCount;
             document.getElementById('ownedCount').textContent = ownedCount;
             document.getElementById('missingCount').textContent = missingCount;
             document.getElementById('completionRate').textContent = `${completionRate}%`;
