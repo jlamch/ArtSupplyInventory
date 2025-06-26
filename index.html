@@ -238,7 +238,7 @@
     </style>
 </head>
 <body>
-    <a href="https://github.com/YOUR_USERNAME/ArtSupplyInventory" class="github-link" target="_blank">
+    <a href="https://github.com/jlamch/ArtSupplyInventory" class="github-link" target="_blank">
         📁 View on GitHub
     </a>
 
@@ -266,6 +266,24 @@
                 </select>
             </div>
             
+            <div class="filter-group">
+                <label for="colorFamilyFilter">Color Family:</label>
+                <select id="colorFamilyFilter">
+                    <option value="">All Colors</option>
+                    <option value="red">🔴 Reds</option>
+                    <option value="orange">🟠 Oranges</option>
+                    <option value="yellow">🟡 Yellows</option>
+                    <option value="green">🟢 Greens</option>
+                    <option value="blue">🔵 Blues</option>
+                    <option value="purple">🟣 Purples</option>
+                    <option value="pink">🩷 Pinks</option>
+                    <option value="brown">🤎 Browns</option>
+                    <option value="gray">⚫ Grays</option>
+                    <option value="white">⚪ Whites</option>
+                    <option value="black">⚫ Blacks</option>
+                </select>
+            </div>
+
             <div class="filter-group">
                 <label for="lightfastnessFilter">Lightfastness:</label>
                 <select id="lightfastnessFilter">
@@ -331,6 +349,7 @@
                         <th>Name</th>
                         <th>Number</th>
                         <th>Set</th>
+                        <th>Family</th>
                         <th>Lightfastness</th>
                         <th>Hex Color</th>
                     </tr>
@@ -452,6 +471,21 @@
                 const lightfastnessClass = getLightfastnessClass(color.lightfastness);
                 const lightfastnessText = typeof color.lightfastness === 'string' ? color.lightfastness : color.lightfastness.toString();
                 const isOwned = inventory.has(color.code);
+                const colorFamily = getColorFamily(color.hexColor);
+                const familyEmoji = {
+                    'red': '🔴',
+                    'orange': '🟠',
+                    'yellow': '🟡',
+                    'green': '🟢',
+                    'blue': '🔵',
+                    'purple': '🟣',
+                    'pink': '🩷',
+                    'brown': '🤎',
+                    'gray': '⚫',
+                    'white': '⚪',
+                    'black': '⚫',
+                    'other': '⚪'
+                };
                 
                 row.innerHTML = `
                     <td>
@@ -467,6 +501,7 @@
                     <td>${color.name}</td>
                     <td>${color.number}</td>
                     <td><span class="set-badge set-${color.set.toLowerCase().replace(/\s+/g, '').replace('6901', '6901')}">${color.set}</span></td>
+                    <td><span style="font-size: 16px;" title="${colorFamily}">${familyEmoji[colorFamily]} ${colorFamily.charAt(0).toUpperCase() + colorFamily.slice(1)}</span></td>
                     <td>
                         <div class="lightfastness">
                             <div class="lf-indicator ${lightfastnessClass}">${lightfastnessText}</div>
@@ -494,6 +529,114 @@
             saveInventory();
             renderTable();
             updateStats();
+        }
+
+        // Color family detection based on hex color values
+        function getColorFamily(hexColor) {
+            // Remove # if present and convert to uppercase
+            const hex = hexColor.replace('#', '').toUpperCase();
+            
+            // Convert hex to RGB
+            const r = parseInt(hex.substr(0, 2), 16);
+            const g = parseInt(hex.substr(2, 2), 16);
+            const b = parseInt(hex.substr(4, 2), 16);
+            
+            // Convert RGB to HSL for better color categorization
+            const hsl = rgbToHsl(r, g, b);
+            const hue = hsl[0];
+            const saturation = hsl[1];
+            const lightness = hsl[2];
+            
+            // Handle grayscale colors (low saturation)
+            if (saturation < 0.15) {
+                if (lightness > 0.85) return 'white';
+                if (lightness < 0.15) return 'black';
+                return 'gray';
+            }
+            
+            // Handle very dark colors
+            if (lightness < 0.12) {
+                return 'black';
+            }
+            
+            // Handle very light colors
+            if (lightness > 0.85 && saturation < 0.3) {
+                return 'white';
+            }
+            
+            // Categorize by hue (0-360 degrees)
+            if (hue >= 345 || hue < 15) {
+                // Pure reds
+                return 'red';
+            } else if (hue >= 15 && hue < 45) {
+                // Red-orange to orange
+                return lightness > 0.7 ? 'orange' : 'orange';
+            } else if (hue >= 45 && hue < 75) {
+                // Yellow-orange to yellow
+                return 'yellow';
+            } else if (hue >= 75 && hue < 165) {
+                // Yellow-green to blue-green
+                return 'green';
+            } else if (hue >= 165 && hue < 195) {
+                // Cyan/turquoise
+                return 'blue';
+            } else if (hue >= 195 && hue < 255) {
+                // Blue
+                return 'blue';
+            } else if (hue >= 255 && hue < 285) {
+                // Blue-purple to purple
+                return 'purple';
+            } else if (hue >= 285 && hue < 315) {
+                // Purple to magenta
+                return 'purple';
+            } else if (hue >= 315 && hue < 345) {
+                // Magenta to pink-red
+                if (lightness > 0.6 && saturation < 0.8) {
+                    return 'pink';
+                } else {
+                    return 'red';
+                }
+            }
+            
+            // Handle browns (low saturation oranges/reds with medium lightness)
+            if ((hue >= 15 && hue < 75) && saturation < 0.6 && lightness >= 0.2 && lightness <= 0.7) {
+                return 'brown';
+            }
+            
+            // Handle pinks (high lightness reds/magentas)
+            if ((hue >= 315 || hue < 45) && lightness > 0.6) {
+                return 'pink';
+            }
+            
+            // Default fallback
+            return 'other';
+        }
+        
+        // Helper function to convert RGB to HSL
+        function rgbToHsl(r, g, b) {
+            r /= 255;
+            g /= 255;
+            b /= 255;
+            
+            const max = Math.max(r, g, b);
+            const min = Math.min(r, g, b);
+            let h, s, l = (max + min) / 2;
+            
+            if (max === min) {
+                h = s = 0; // achromatic
+            } else {
+                const d = max - min;
+                s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+                
+                switch (max) {
+                    case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                    case g: h = (b - r) / d + 2; break;
+                    case b: h = (r - g) / d + 4; break;
+                }
+                h /= 6;
+            }
+            
+            return [h * 360, s, l];
         }
 
         function getLightfastnessClass(rating) {
@@ -532,12 +675,15 @@
 
         function applyFilters() {
             const setFilter = document.getElementById('setFilter').value;
+            const colorFamilyFilter = document.getElementById('colorFamilyFilter').value;
             const lightfastnessFilter = document.getElementById('lightfastnessFilter').value;
             const inventoryFilter = document.getElementById('inventoryFilter').value;
             const searchInput = document.getElementById('searchInput').value.toLowerCase();
 
             filteredData = colorsDatabase.filter(color => {
                 const matchesSet = !setFilter || color.set === setFilter;
+                
+                const matchesColorFamily = !colorFamilyFilter || getColorFamily(color.hexColor) === colorFamilyFilter;
                 
                 let matchesLightfastness = true;
                 if (lightfastnessFilter) {
@@ -566,7 +712,7 @@
                     color.code.toLowerCase().includes(searchInput) ||
                     color.number.toLowerCase().includes(searchInput);
 
-                return matchesSet && matchesLightfastness && matchesInventory && matchesSearch;
+                return matchesSet && matchesColorFamily && matchesLightfastness && matchesInventory && matchesSearch;
             });
 
             renderTable();
@@ -575,6 +721,7 @@
 
         function clearFilters() {
             document.getElementById('setFilter').value = '';
+            document.getElementById('colorFamilyFilter').value = '';
             document.getElementById('lightfastnessFilter').value = '';
             document.getElementById('inventoryFilter').value = '';
             document.getElementById('searchInput').value = '';
@@ -665,7 +812,7 @@
         }
 
         function downloadCSV() {
-            const headers = ['Owned', 'Code', 'Name', 'Number', 'Set', 'Lightfastness', 'Lightfastness Type', 'Hex Color'];
+            const headers = ['Owned', 'Code', 'Name', 'Number', 'Set', 'Color Family', 'Lightfastness', 'Lightfastness Type', 'Hex Color'];
             const csvContent = [
                 headers.join(','),
                 ...filteredData.map(color => [
@@ -674,6 +821,7 @@
                     `"${color.name}"`,
                     color.number,
                     `"${color.set}"`,
+                    getColorFamily(color.hexColor),
                     color.lightfastness,
                     color.lightfastnessType,
                     color.hexColor
@@ -692,7 +840,8 @@
         function downloadJSON() {
             const jsonData = filteredData.map(color => ({
                 ...color,
-                owned: inventory.has(color.code)
+                owned: inventory.has(color.code),
+                colorFamily: getColorFamily(color.hexColor)
             }));
             const jsonContent = JSON.stringify(jsonData, null, 2);
             const blob = new Blob([jsonContent], { type: 'application/json' });
@@ -705,7 +854,7 @@
         }
 
         function copyToClipboard() {
-            const headers = ['Owned', 'Code', 'Name', 'Number', 'Set', 'Lightfastness', 'Lightfastness Type', 'Hex Color'];
+            const headers = ['Owned', 'Code', 'Name', 'Number', 'Set', 'Color Family', 'Lightfastness', 'Lightfastness Type', 'Hex Color'];
             const csvContent = [
                 headers.join('\t'),
                 ...filteredData.map(color => [
@@ -714,6 +863,7 @@
                     color.name,
                     color.number,
                     color.set,
+                    getColorFamily(color.hexColor),
                     color.lightfastness,
                     color.lightfastnessType,
                     color.hexColor
@@ -736,6 +886,7 @@
 
         // Event listeners
         document.getElementById('setFilter').addEventListener('change', applyFilters);
+        document.getElementById('colorFamilyFilter').addEventListener('change', applyFilters);
         document.getElementById('lightfastnessFilter').addEventListener('change', applyFilters);
         document.getElementById('inventoryFilter').addEventListener('change', applyFilters);
         document.getElementById('searchInput').addEventListener('input', applyFilters);
