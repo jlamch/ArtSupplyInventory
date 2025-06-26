@@ -694,8 +694,11 @@
             const setFilter = document.getElementById('setFilter').value;
             const selectedSetCountElement = document.getElementById('selectedSetCount');
             if (setFilter) {
-                const selectedSetCount = colorsDatabase.filter(c => c.set === setFilter).length;
-                document.getElementById('selectedSetCountValue').textContent = selectedSetCount;
+                const setColors = colorsDatabase.filter(c => c.set === setFilter);
+                const totalInSet = setColors.length;
+                const ownedInSet = setColors.filter(c => inventory.has(c.code)).length;
+                const missingInSet = totalInSet - ownedInSet;
+                document.getElementById('selectedSetCountValue').textContent = `${ownedInSet}/${totalInSet} (${missingInSet} missing)`;
                 selectedSetCountElement.style.display = 'inline';
             } else {
                 selectedSetCountElement.style.display = 'none';
