@@ -1,0 +1,218 @@
+[
+  {
+    "code": "0700777",
+    "name": "Port",
+    "number": "01",
+    "lightfastness": 7,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#8B4B5C"
+  },
+  {
+    "code": "0700778",
+    "name": "Juniper",
+    "number": "02",
+    "lightfastness": 8,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#5D6B7A"
+  },
+  {
+    "code": "0700779",
+    "name": "Aubergine",
+    "number": "03",
+    "lightfastness": 5,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#4A3B5C"
+  },
+  {
+    "code": "0700780",
+    "name": "Dark Indigo",
+    "number": "04",
+    "lightfastness": 8,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#2B3A4A"
+  },
+  {
+    "code": "0700781",
+    "name": "Shadow",
+    "number": "05",
+    "lightfastness": 6,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#3B4B5A"
+  },
+  {
+    "code": "0700782",
+    "name": "Steel Blue",
+    "number": "06",
+    "lightfastness": 7,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#4A6B7A"
+  },
+  {
+    "code": "0700783",
+    "name": "Ocean Blue",
+    "number": "07",
+    "lightfastness": 8,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#2B5A6A"
+  },
+  {
+    "code": "0700784",
+    "name": "Slate Green",
+    "number": "08",
+    "lightfastness": 8,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#4A5B5A"
+  },
+  {
+    "code": "0700785",
+    "name": "Green Grey",
+    "number": "09",
+    "lightfastness": 7,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#5A6B5A"
+  },
+  {
+    "code": "0700786",
+    "name": "Meadow",
+    "number": "10",
+    "lightfastness": 6,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#6B7A4A"
+  },
+  {
+    "code": "0700787",
+    "name": "Ivy",
+    "number": "11",
+    "lightfastness": 8,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#4A5B3A"
+  },
+  {
+    "code": "0700788",
+    "name": "Sage",
+    "number": "12",
+    "lightfastness": 6,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#5A6B4A"
+  },
+  {
+    "code": "0700789",
+    "name": "Chestnut",
+    "number": "13",
+    "lightfastness": 8,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#7A4B3A"
+  },
+  {
+    "code": "0700790",
+    "name": "Russet",
+    "number": "14",
+    "lightfastness": 6,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#8B5A3A"
+  },
+  {
+    "code": "0700791",
+    "name": "Cool Brown",
+    "number": "15",
+    "lightfastness": 5,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#6B5A4A"
+  },
+  {
+    "code": "0700792",
+    "name": "Cocoa",
+    "number": "16",
+    "lightfastness": 7,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#5A3B2A"
+  },
+  {
+    "code": "0700793",
+    "name": "Autumn Brown",
+    "number": "17",
+    "lightfastness": 8,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#7A5B3A"
+  },
+  {
+    "code": "0700794",
+    "name": "Storm",
+    "number": "18",
+    "lightfastness": 7,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#4A4B5A"
+  },
+  {
+    "code": "0700795",
+    "name": "Warm Grey",
+    "number": "19",
+    "lightfastness": 6,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#6B6A5A"
+  },
+  {
+    "code": "0700796",
+    "name": "Midnight Black",
+    "number": "20",
+    "lightfastness": 8,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#1A1A1A"
+  },
+  {
+    "code": "0700797",
+    "name": "Mountain Grey",
+    "number": "21",
+    "lightfastness": 7,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#5A5A5A"
+  },
+  {
+    "code": "0700798",
+    "name": "Cloud Grey",
+    "number": "22",
+    "lightfastness": 8,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#8A8A8A"
+  },
+  {
+    "code": "0700799",
+    "name": "Cool Grey",
+    "number": "23",
+    "lightfastness": 6,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#6A6A6A"
+  },
+  {
+    "code": "0700800",
+    "name": "White",
+    "number": "24",
+    "lightfastness": 7,
+    "lightfastnessType": "BW",
+    "set": "Graphitint",
+    "hexColor": "#FFFFFF"
+  }
+]

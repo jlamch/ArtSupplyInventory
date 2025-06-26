@@ -1,0 +1,218 @@
+[
+  {
+    "code": "1610",
+    "name": "Light Sienna",
+    "number": "1610",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#D2691E"
+  },
+  {
+    "code": "3615",
+    "name": "Solway Blue",
+    "number": "3615",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#4682B4"
+  },
+  {
+    "code": "3720",
+    "name": "Ink Blue",
+    "number": "3720",
+    "lightfastness": 7,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#191970"
+  },
+  {
+    "code": "3810",
+    "name": "Smoke Blue",
+    "number": "3810",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#778899"
+  },
+  {
+    "code": "4125",
+    "name": "Pale Cedar",
+    "number": "4125",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#DEB887"
+  },
+  {
+    "code": "4135",
+    "name": "Green Shadow",
+    "number": "4135",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#556B2F"
+  },
+  {
+    "code": "5090",
+    "name": "Crag Green",
+    "number": "5090",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#2E8B57"
+  },
+  {
+    "code": "5160",
+    "name": "Olive earth",
+    "number": "5160",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#6B8E23"
+  },
+  {
+    "code": "5550",
+    "name": "Warm Earth",
+    "number": "5550",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#8B4513"
+  },
+  {
+    "code": "5700",
+    "name": "Brown Ochre",
+    "number": "5700",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#A0522D"
+  },
+  {
+    "code": "5715",
+    "name": "Wheat",
+    "number": "5715",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#F5DEB3"
+  },
+  {
+    "code": "5720",
+    "name": "Yellow ochre",
+    "number": "5720",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#CC7722"
+  },
+  {
+    "code": "6110",
+    "name": "Sepia Red",
+    "number": "6110",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#8B4513"
+  },
+  {
+    "code": "6210",
+    "name": "Mars Orange",
+    "number": "6210",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#FF8C00"
+  },
+  {
+    "code": "6220",
+    "name": "Sanguine",
+    "number": "6220",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#A0522D"
+  },
+  {
+    "code": "6300",
+    "name": "Venetian Red",
+    "number": "6300",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#C80815"
+  },
+  {
+    "code": "6400",
+    "name": "Terracotta",
+    "number": "6400",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#E2725B"
+  },
+  {
+    "code": "6470",
+    "name": "Mars Violet",
+    "number": "6470",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#8B008B"
+  },
+  {
+    "code": "6510",
+    "name": "Ruby Earth",
+    "number": "6510",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#9B111E"
+  },
+  {
+    "code": "6600",
+    "name": "Chocolate",
+    "number": "6600",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#7B3F00"
+  },
+  {
+    "code": "6700",
+    "name": "Ivory Black",
+    "number": "6700",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#0F0F0F"
+  },
+  {
+    "code": "7010",
+    "name": "Warm Grey",
+    "number": "7010",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#8C7853"
+  },
+  {
+    "code": "7120",
+    "name": "Cool Grey",
+    "number": "7120",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#6C7B7F"
+  },
+  {
+    "code": "7200",
+    "name": "White",
+    "number": "7200",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Drawing",
+    "hexColor": "#FFFFFF"
+  }
+]
