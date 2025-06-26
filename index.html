@@ -494,7 +494,8 @@
                 
                 const lightfastnessClass = getLightfastnessClass(color.lightfastness);
                 const lightfastnessText = typeof color.lightfastness === 'string' ? color.lightfastness : color.lightfastness.toString();
-                const isOwned = inventory.has(color.code);
+                const colorId = getColorId(color);
+                const isOwned = inventory.has(colorId);
                 const colorFamily = getColorFamily(color.hexColor);
                 const familyEmoji = {
                     'red': '🔴',
@@ -544,11 +545,21 @@
             });
         }
 
+        // Create unique identifier for a color (code + set + number)
+        function getColorId(color) {
+            return `${color.code}|${color.set}|${color.number || ''}`;
+        }
+
         function toggleOwnership(colorCode) {
-            if (inventory.has(colorCode)) {
-                inventory.delete(colorCode);
+            // Find the actual color object to get the full identifier
+            const color = filteredData.find(c => c.code === colorCode);
+            if (!color) return;
+            
+            const colorId = getColorId(color);
+            if (inventory.has(colorId)) {
+                inventory.delete(colorId);
             } else {
-                inventory.add(colorCode);
+                inventory.add(colorId);
             }
             saveInventory();
             renderTable();
@@ -681,7 +692,7 @@
         }
 
         function updateStats() {
-            const ownedColors = colorsDatabase.filter(c => inventory.has(c.code));
+            const ownedColors = colorsDatabase.filter(c => inventory.has(getColorId(c)));
             const ownedCount = ownedColors.length;
             const missingCount = colorsDatabase.length - ownedCount;
             const completionRate = colorsDatabase.length > 0 ? Math.round((ownedCount / colorsDatabase.length) * 100) : 0;
@@ -696,7 +707,7 @@
             if (setFilter) {
                 const setColors = colorsDatabase.filter(c => c.set === setFilter);
                 const totalInSet = setColors.length;
-                const ownedInSet = setColors.filter(c => inventory.has(c.code)).length;
+                const ownedInSet = setColors.filter(c => inventory.has(getColorId(c))).length;
                 const missingInSet = totalInSet - ownedInSet;
                 document.getElementById('selectedSetCountValue').textContent = `${ownedInSet}/${totalInSet} (${missingInSet} missing)`;
                 selectedSetCountElement.style.display = 'inline';
@@ -744,8 +755,8 @@
                 }
 
                 let matchesInventory = true;
-                if (inventoryFilter === 'owned') matchesInventory = inventory.has(color.code);
-                else if (inventoryFilter === 'missing') matchesInventory = !inventory.has(color.code);
+                if (inventoryFilter === 'owned') matchesInventory = inventory.has(getColorId(color));
+                else if (inventoryFilter === 'missing') matchesInventory = !inventory.has(getColorId(color));
                 
                 const matchesSearch = !searchInput || 
                     color.name.toLowerCase().includes(searchInput) ||
@@ -772,7 +783,7 @@
 
         // Inventory management functions
         function exportInventory() {
-            const ownedColors = colorsDatabase.filter(color => inventory.has(color.code));
+            const ownedColors = colorsDatabase.filter(color => inventory.has(getColorId(color)));
             const inventoryData = {
                 exportDate: new Date().toISOString(),
                 totalOwned: ownedColors.length,
@@ -780,11 +791,12 @@
                 ownedColors: ownedColors.map(color => ({
                     code: color.code,
                     name: color.name,
-                    number: color.number,
+                    number: color.number || '',
                     set: color.set,
-                    hexColor: color.hexColor
+                    hexColor: color.hexColor,
+                    colorId: getColorId(color)
                 })),
-                ownedCodes: [...inventory]
+                ownedColorIds: [...inventory]
             };
 
             const jsonContent = JSON.stringify(inventoryData, null, 2);
@@ -809,29 +821,74 @@
             reader.onload = function(e) {
                 try {
                     const content = e.target.result;
-                    let importedCodes = [];
+                    let importedColorIds = [];
 
                     if (file.name.endsWith('.json')) {
                         const data = JSON.parse(content);
-                        importedCodes = data.ownedCodes || data;
+                        
+                        if (data.ownedColorIds) {
+                            // New format with composite IDs
+                            importedColorIds = data.ownedColorIds;
+                        } else if (data.ownedColors) {
+                            // Convert from detailed color objects
+                            importedColorIds = data.ownedColors.map(color => 
+                                getColorId({
+                                    code: color.code,
+                                    set: color.set,
+                                    number: color.number || ''
+                                })
+                            );
+                        } else if (data.ownedCodes) {
+                            // Legacy format - try to match by code, but this may be imperfect
+                            console.warn('Using legacy import format. Some colors may not match correctly due to duplicate codes across sets.');
+                            importedColorIds = data.ownedCodes.map(code => {
+                                const matchingColor = colorsDatabase.find(c => c.code === code);
+                                return matchingColor ? getColorId(matchingColor) : null;
+                            }).filter(id => id !== null);
+                        } else {
+                            // Array of codes (legacy)
+                            console.warn('Using legacy import format. Some colors may not match correctly due to duplicate codes across sets.');
+                            importedColorIds = data.map(code => {
+                                const matchingColor = colorsDatabase.find(c => c.code === code);
+                                return matchingColor ? getColorId(matchingColor) : null;
+                            }).filter(id => id !== null);
+                        }
                     } else if (file.name.endsWith('.csv')) {
-                        importedCodes = content.split(/[,\n\r]/)
-                            .map(code => code.trim())
-                            .filter(code => code.length > 0);
+                        // CSV format: expect "code,set,number" or just "code" (legacy)
+                        const lines = content.split(/[\n\r]+/).map(line => line.trim()).filter(line => line.length > 0);
+                        importedColorIds = lines.map(line => {
+                            const parts = line.split(',').map(p => p.trim());
+                            if (parts.length >= 2) {
+                                // New format: code,set,number
+                                return `${parts[0]}|${parts[1]}|${parts[2] || ''}`;
+                            } else {
+                                // Legacy format: just code
+                                console.warn('Using legacy CSV format. Some colors may not match correctly due to duplicate codes across sets.');
+                                const matchingColor = colorsDatabase.find(c => c.code === parts[0]);
+                                return matchingColor ? getColorId(matchingColor) : null;
+                            }
+                        }).filter(id => id !== null);
                     }
 
-                    const validCodes = importedCodes.filter(code => 
-                        colorsDatabase.some(color => color.code === code)
+                    // Validate that these color IDs exist in our database
+                    const validColorIds = importedColorIds.filter(colorId => 
+                        colorsDatabase.some(color => getColorId(color) === colorId)
                     );
 
-                    if (validCodes.length > 0) {
-                        inventory = new Set(validCodes);
+                    if (validColorIds.length > 0) {
+                        inventory = new Set(validColorIds);
                         saveInventory();
                         renderTable();
                         updateStats();
-                        alert(`Successfully imported ${validCodes.length} colors to your inventory!`);
+                        
+                        const skipped = importedColorIds.length - validColorIds.length;
+                        let message = `Successfully imported ${validColorIds.length} colors to your inventory!`;
+                        if (skipped > 0) {
+                            message += `\n${skipped} colors were skipped (not found in current database).`;
+                        }
+                        alert(message);
                     } else {
-                        alert('No valid color codes found in the file.');
+                        alert('No valid colors found in the file.');
                     }
                 } catch (error) {
                     alert('Error reading file. Please check the format and try again.');
@@ -856,10 +913,10 @@
             const csvContent = [
                 headers.join(','),
                 ...filteredData.map(color => [
-                    inventory.has(color.code) ? 'Yes' : 'No',
+                    inventory.has(getColorId(color)) ? 'Yes' : 'No',
                     color.code,
                     `"${color.name}"`,
-                    color.number,
+                    color.number || '',
                     `"${color.set}"`,
                     getColorFamily(color.hexColor),
                     color.lightfastness,
@@ -880,7 +937,7 @@
         function downloadJSON() {
             const jsonData = filteredData.map(color => ({
                 ...color,
-                owned: inventory.has(color.code),
+                owned: inventory.has(getColorId(color)),
                 colorFamily: getColorFamily(color.hexColor)
             }));
             const jsonContent = JSON.stringify(jsonData, null, 2);
@@ -898,10 +955,10 @@
             const csvContent = [
                 headers.join('\t'),
                 ...filteredData.map(color => [
-                    inventory.has(color.code) ? 'Yes' : 'No',
+                    inventory.has(getColorId(color)) ? 'Yes' : 'No',
                     color.code,
                     color.name,
-                    color.number,
+                    color.number || '',
                     color.set,
                     getColorFamily(color.hexColor),
                     color.lightfastness,
