@@ -1,0 +1,550 @@
+[
+  {
+    "code": "101",
+    "name": "white",
+    "number": "101",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#FFFFFF"
+  },
+  {
+    "code": "102",
+    "name": "cream",
+    "number": "102",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#FFFDD0"
+  },
+  {
+    "code": "104",
+    "name": "light yellow glaze",
+    "number": "104",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#FFFFE0"
+  },
+  {
+    "code": "107",
+    "name": "cadmium yellow",
+    "number": "107",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#FFD700"
+  },
+  {
+    "code": "109",
+    "name": "dark chrome yellow",
+    "number": "109",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#FFA500"
+  },
+  {
+    "code": "110",
+    "name": "phthalo blue",
+    "number": "110",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#0F0F80"
+  },
+  {
+    "code": "112",
+    "name": "leaf green",
+    "number": "112",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#228B22"
+  },
+  {
+    "code": "113",
+    "name": "orange glaze",
+    "number": "113",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#FF8C00"
+  },
+  {
+    "code": "115",
+    "name": "dark cadmium orange",
+    "number": "115",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#FF4500"
+  },
+  {
+    "code": "118",
+    "name": "scarlet red",
+    "number": "118",
+    "lightfastness": 3,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#FF2400"
+  },
+  {
+    "code": "120",
+    "name": "ultramarine",
+    "number": "120",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#4169E1"
+  },
+  {
+    "code": "121",
+    "name": "pale geranium lake",
+    "number": "121",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#E68FAE"
+  },
+  {
+    "code": "123",
+    "name": "fuchsia",
+    "number": "123",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#FF1493"
+  },
+  {
+    "code": "124",
+    "name": "rose carmine",
+    "number": "124",
+    "lightfastness": 3,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#FF007F"
+  },
+  {
+    "code": "125",
+    "name": "middle purple pink",
+    "number": "125",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#DB7093"
+  },
+  {
+    "code": "127",
+    "name": "pink carmine",
+    "number": "127",
+    "lightfastness": 3,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#FF69B4"
+  },
+  {
+    "code": "129",
+    "name": "pink madder lake",
+    "number": "129",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#DB7093"
+  },
+  {
+    "code": "131",
+    "name": "coral",
+    "number": "131",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#FF7F50"
+  },
+  {
+    "code": "132",
+    "name": "beige red",
+    "number": "132",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#F5F5DC"
+  },
+  {
+    "code": "133",
+    "name": "magenta",
+    "number": "133",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#FF00FF"
+  },
+  {
+    "code": "136",
+    "name": "purple violet",
+    "number": "136",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#8B008B"
+  },
+  {
+    "code": "137",
+    "name": "blue violet",
+    "number": "137",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#8A2BE2"
+  },
+  {
+    "code": "138",
+    "name": "violet",
+    "number": "138",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#EE82EE"
+  },
+  {
+    "code": "140",
+    "name": "light ultramarine",
+    "number": "140",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#6495ED"
+  },
+  {
+    "code": "143",
+    "name": "cobalt blue",
+    "number": "143",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#0047AB"
+  },
+  {
+    "code": "149",
+    "name": "bluish turquoise",
+    "number": "149",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#40E0D0"
+  },
+  {
+    "code": "151",
+    "name": "helioblue reddish",
+    "number": "151",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#4169E1"
+  },
+  {
+    "code": "153",
+    "name": "cobalt turquoise",
+    "number": "153",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#00CED1"
+  },
+  {
+    "code": "156",
+    "name": "cobalt green",
+    "number": "156",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#3D9140"
+  },
+  {
+    "code": "157",
+    "name": "dark indigo",
+    "number": "157",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#4B0082"
+  },
+  {
+    "code": "160",
+    "name": "manganese violet",
+    "number": "160",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#9F4F96"
+  },
+  {
+    "code": "163",
+    "name": "emerald green",
+    "number": "163",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#50C878"
+  },
+  {
+    "code": "167",
+    "name": "permanent green olive",
+    "number": "167",
+    "lightfastness": 3,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#6B8E23"
+  },
+  {
+    "code": "168",
+    "name": "earth green yellowish",
+    "number": "168",
+    "lightfastness": 3,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#9ACD32"
+  },
+  {
+    "code": "171",
+    "name": "light green",
+    "number": "171",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#90EE90"
+  },
+  {
+    "code": "173",
+    "name": "olive green yellowish",
+    "number": "173",
+    "lightfastness": 3,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#9ACD32"
+  },
+  {
+    "code": "174",
+    "name": "chromium green opaque",
+    "number": "174",
+    "lightfastness": 3,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#00FF7F"
+  },
+  {
+    "code": "180",
+    "name": "raw umber",
+    "number": "180",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#826644"
+  },
+  {
+    "code": "184",
+    "name": "dark Naples ochre",
+    "number": "184",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#AE6938"
+  },
+  {
+    "code": "185",
+    "name": "Naples yellow",
+    "number": "185",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#FADA5E"
+  },
+  {
+    "code": "187",
+    "name": "burnt ochre",
+    "number": "187",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#CC7722"
+  },
+  {
+    "code": "188",
+    "name": "sanguine",
+    "number": "188",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#92000A"
+  },
+  {
+    "code": "190",
+    "name": "Venetian red",
+    "number": "190",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#C80815"
+  },
+  {
+    "code": "191",
+    "name": "Pompeian red",
+    "number": "191",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#CC474B"
+  },
+  {
+    "code": "192",
+    "name": "India red",
+    "number": "192",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#CD5C5C"
+  },
+  {
+    "code": "194",
+    "name": "red violet",
+    "number": "194",
+    "lightfastness": 3,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#C71585"
+  },
+  {
+    "code": "199",
+    "name": "black",
+    "number": "199",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#000000"
+  },
+  {
+    "code": "217",
+    "name": "middle cadmium red",
+    "number": "217",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#E30022"
+  },
+  {
+    "code": "219",
+    "name": "deep scarlet red",
+    "number": "219",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#B22222"
+  },
+  {
+    "code": "225",
+    "name": "dark red",
+    "number": "225",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#8B0000"
+  },
+  {
+    "code": "226",
+    "name": "alizarin crimson",
+    "number": "226",
+    "lightfastness": 3,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#E32636"
+  },
+  {
+    "code": "233",
+    "name": "cold grey IV",
+    "number": "233",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#A9A9A9"
+  },
+  {
+    "code": "246",
+    "name": "Prussian blue",
+    "number": "246",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#003153"
+  },
+  {
+    "code": "247",
+    "name": "indanthrene blue",
+    "number": "247",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#002FA7"
+  },
+  {
+    "code": "249",
+    "name": "mauve",
+    "number": "249",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#E0B0FF"
+  },
+  {
+    "code": "264",
+    "name": "dark phthalo green",
+    "number": "264",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#123524"
+  },
+  {
+    "code": "267",
+    "name": "pine green",
+    "number": "267",
+    "lightfastness": 3,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#01796F"
+  },
+  {
+    "code": "271",
+    "name": "warm grey II",
+    "number": "271",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#D3D3D3"
+  },
+  {
+    "code": "274",
+    "name": "warm grey V",
+    "number": "274",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#808080"
+  },
+  {
+    "code": "280",
+    "name": "burnt umber",
+    "number": "280",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#8A3324"
+  },
+  {
+    "code": "283",
+    "name": "burnt siena",
+    "number": "283",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Pitt Pastel",
+    "hexColor": "#E97451"
+  }

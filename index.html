@@ -257,11 +257,18 @@
                         <option value="ProColour">ProColour</option>
                         <option value="Lightfast">Lightfast</option>
                         <option value="Coloursoft">Coloursoft</option>
+                        <option value="Graphitint">Graphitint</option>
+                        <option value="Drawing">Drawing</option>
                     </optgroup>
                     <optgroup label="Caran d'Ache">
                         <option value="Luminance 6901">Luminance 6901</option>
                         <option value="Neocolor II">Neocolor II</option>
                         <option value="Pablo">Pablo</option>
+                    </optgroup>
+                    <optgroup label="Faber-Castell">
+                        <option value="Polychromos">Polychromos</option>
+                        <option value="Albrecht Dürer">Albrecht Dürer</option>
+                        <option value="Pitt Pastels">Pitt Pastels</option>
                     </optgroup>
                 </select>
             </div>
@@ -391,8 +398,11 @@
             { file: 'caran-neocolor-json.json', loaded: false },
             { file: 'caran-pablo-json.json', loaded: false },
             { file: 'derwent-graphitint-json.json', loaded: false },
-            { file: 'derwent-drawing.json', loaded: false }
-        ];
+            { file: 'derwent-drawing.json', loaded: false },
+            { file: 'faber-polychromos.json', loaded: false },
+            { file: 'faber-albrecht-durer.json', loaded: false },
+            { file: 'faber-pitt-pastels.json', loaded: false }
+    ];
 
         // Load all data from JSON files
         async function loadAllData() {

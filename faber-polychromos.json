@@ -1,0 +1,1072 @@
+[
+  {
+    "code": "101",
+    "name": "white",
+    "number": "101",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FFFFFF"
+  },
+  {
+    "code": "102",
+    "name": "cream",
+    "number": "102",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FFFDD0"
+  },
+  {
+    "code": "103",
+    "name": "ivory",
+    "number": "103",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FFFFF0"
+  },
+  {
+    "code": "104",
+    "name": "light yellow glaze",
+    "number": "104",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FFFFE0"
+  },
+  {
+    "code": "105",
+    "name": "light cadmium yellow",
+    "number": "105",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FFE135"
+  },
+  {
+    "code": "106",
+    "name": "light chrome yellow",
+    "number": "106",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FFC125"
+  },
+  {
+    "code": "107",
+    "name": "cadmium yellow",
+    "number": "107",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FFD700"
+  },
+  {
+    "code": "108",
+    "name": "dark cadmium yellow",
+    "number": "108",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FFB90F"
+  },
+  {
+    "code": "109",
+    "name": "dark chrome yellow",
+    "number": "109",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FFA500"
+  },
+  {
+    "code": "110",
+    "name": "phthalo blue",
+    "number": "110",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#0F0F80"
+  },
+  {
+    "code": "111",
+    "name": "cadmium orange",
+    "number": "111",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FF6103"
+  },
+  {
+    "code": "112",
+    "name": "leaf green",
+    "number": "112",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#228B22"
+  },
+  {
+    "code": "113",
+    "name": "orange glaze",
+    "number": "113",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FF8C00"
+  },
+  {
+    "code": "115",
+    "name": "dark cadmium orange",
+    "number": "115",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FF4500"
+  },
+  {
+    "code": "117",
+    "name": "light cadmium red",
+    "number": "117",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FF6347"
+  },
+  {
+    "code": "118",
+    "name": "scarlet red",
+    "number": "118",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FF2400"
+  },
+  {
+    "code": "119",
+    "name": "light magenta",
+    "number": "119",
+    "lightfastness": 3,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FF77FF"
+  },
+  {
+    "code": "120",
+    "name": "ultramarine",
+    "number": "120",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#4169E1"
+  },
+  {
+    "code": "121",
+    "name": "pale geranium lake",
+    "number": "121",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#E68FAE"
+  },
+  {
+    "code": "123",
+    "name": "fuchsia",
+    "number": "123",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FF1493"
+  },
+  {
+    "code": "124",
+    "name": "rose carmine",
+    "number": "124",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FF007F"
+  },
+  {
+    "code": "125",
+    "name": "middle purple pink",
+    "number": "125",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#DB7093"
+  },
+  {
+    "code": "126",
+    "name": "permanent carmine",
+    "number": "126",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#DC143C"
+  },
+  {
+    "code": "127",
+    "name": "pink carmine",
+    "number": "127",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FF69B4"
+  },
+  {
+    "code": "129",
+    "name": "pink madder lake",
+    "number": "129",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#DB7093"
+  },
+  {
+    "code": "130",
+    "name": "salmon",
+    "number": "130",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FA8072"
+  },
+  {
+    "code": "131",
+    "name": "coral",
+    "number": "131",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FF7F50"
+  },
+  {
+    "code": "132",
+    "name": "beige red",
+    "number": "132",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#F5F5DC"
+  },
+  {
+    "code": "133",
+    "name": "magenta",
+    "number": "133",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FF00FF"
+  },
+  {
+    "code": "134",
+    "name": "crimson",
+    "number": "134",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#DC143C"
+  },
+  {
+    "code": "135",
+    "name": "light red violet",
+    "number": "135",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#DA70D6"
+  },
+  {
+    "code": "136",
+    "name": "purple violet",
+    "number": "136",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#8B008B"
+  },
+  {
+    "code": "137",
+    "name": "blue violet",
+    "number": "137",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#8A2BE2"
+  },
+  {
+    "code": "138",
+    "name": "violet",
+    "number": "138",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#EE82EE"
+  },
+  {
+    "code": "140",
+    "name": "light ultramarine",
+    "number": "140",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#6495ED"
+  },
+  {
+    "code": "141",
+    "name": "Delft blue",
+    "number": "141",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#1F75FE"
+  },
+  {
+    "code": "142",
+    "name": "madder",
+    "number": "142",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#A12A5E"
+  },
+  {
+    "code": "143",
+    "name": "cobalt blue",
+    "number": "143",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#0047AB"
+  },
+  {
+    "code": "144",
+    "name": "cobalt blue greenish",
+    "number": "144",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#0066CC"
+  },
+  {
+    "code": "145",
+    "name": "light phthalo blue",
+    "number": "145",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#87CEEB"
+  },
+  {
+    "code": "146",
+    "name": "sky blue",
+    "number": "146",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#87CEEB"
+  },
+  {
+    "code": "149",
+    "name": "bluish turquoise",
+    "number": "149",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#40E0D0"
+  },
+  {
+    "code": "151",
+    "name": "helioblue reddish",
+    "number": "151",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#4169E1"
+  },
+  {
+    "code": "152",
+    "name": "middle phthalo blue",
+    "number": "152",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#0F0F80"
+  },
+  {
+    "code": "153",
+    "name": "cobalt turquoise",
+    "number": "153",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#00CED1"
+  },
+  {
+    "code": "154",
+    "name": "light cobalt turquoise",
+    "number": "154",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#AFEEEE"
+  },
+  {
+    "code": "155",
+    "name": "helio turquoise",
+    "number": "155",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#48D1CC"
+  },
+  {
+    "code": "156",
+    "name": "cobalt green",
+    "number": "156",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#3D9140"
+  },
+  {
+    "code": "157",
+    "name": "dark indigo",
+    "number": "157",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#4B0082"
+  },
+  {
+    "code": "158",
+    "name": "deep cobalt green",
+    "number": "158",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#006A4E"
+  },
+  {
+    "code": "159",
+    "name": "Hooker's green",
+    "number": "159",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#49796B"
+  },
+  {
+    "code": "160",
+    "name": "manganese violet",
+    "number": "160",
+    "lightfastness": 3,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#9F4F96"
+  },
+  {
+    "code": "161",
+    "name": "phthalo green",
+    "number": "161",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#123524"
+  },
+  {
+    "code": "162",
+    "name": "light phthalo green",
+    "number": "162",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#90EE90"
+  },
+  {
+    "code": "163",
+    "name": "emerald green",
+    "number": "163",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#50C878"
+  },
+  {
+    "code": "165",
+    "name": "juniper green",
+    "number": "165",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#74C365"
+  },
+  {
+    "code": "166",
+    "name": "grass green",
+    "number": "166",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#7CFC00"
+  },
+  {
+    "code": "167",
+    "name": "permanent green olive",
+    "number": "167",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#6B8E23"
+  },
+  {
+    "code": "168",
+    "name": "earth green yellowish",
+    "number": "168",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#9ACD32"
+  },
+  {
+    "code": "169",
+    "name": "caput mortuum",
+    "number": "169",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#592720"
+  },
+  {
+    "code": "170",
+    "name": "may green",
+    "number": "170",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#4F7942"
+  },
+  {
+    "code": "171",
+    "name": "light green",
+    "number": "171",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#90EE90"
+  },
+  {
+    "code": "172",
+    "name": "earth green",
+    "number": "172",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#556B2F"
+  },
+  {
+    "code": "173",
+    "name": "olive green yellowish",
+    "number": "173",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#9ACD32"
+  },
+  {
+    "code": "174",
+    "name": "chromium green opaque",
+    "number": "174",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#00FF7F"
+  },
+  {
+    "code": "175",
+    "name": "dark sepia",
+    "number": "175",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#704214"
+  },
+  {
+    "code": "176",
+    "name": "Van-Dyck-brown",
+    "number": "176",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#654321"
+  },
+  {
+    "code": "177",
+    "name": "walnut brown",
+    "number": "177",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#773F1A"
+  },
+  {
+    "code": "178",
+    "name": "nougat",
+    "number": "178",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#A17A50"
+  },
+  {
+    "code": "179",
+    "name": "bistre",
+    "number": "179",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#3D2914"
+  },
+  {
+    "code": "180",
+    "name": "raw umber",
+    "number": "180",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#826644"
+  },
+  {
+    "code": "181",
+    "name": "Payne's grey",
+    "number": "181",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#536878"
+  },
+  {
+    "code": "182",
+    "name": "brown ochre",
+    "number": "182",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#955F20"
+  },
+  {
+    "code": "183",
+    "name": "light yellow ochre",
+    "number": "183",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#E3A857"
+  },
+  {
+    "code": "184",
+    "name": "dark Naples ochre",
+    "number": "184",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#AE6938"
+  },
+  {
+    "code": "185",
+    "name": "Naples yellow",
+    "number": "185",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FADA5E"
+  },
+  {
+    "code": "186",
+    "name": "terracotta",
+    "number": "186",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#E2725B"
+  },
+  {
+    "code": "187",
+    "name": "burnt ochre",
+    "number": "187",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#CC7722"
+  },
+  {
+    "code": "188",
+    "name": "sanguine",
+    "number": "188",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#92000A"
+  },
+  {
+    "code": "189",
+    "name": "cinnamon",
+    "number": "189",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#D2691E"
+  },
+  {
+    "code": "190",
+    "name": "Venetian red",
+    "number": "190",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#C80815"
+  },
+  {
+    "code": "191",
+    "name": "Pompeian red",
+    "number": "191",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#CC474B"
+  },
+  {
+    "code": "192",
+    "name": "India red",
+    "number": "192",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#CD5C5C"
+  },
+  {
+    "code": "193",
+    "name": "burnt carmine",
+    "number": "193",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#960018"
+  },
+  {
+    "code": "194",
+    "name": "red violet",
+    "number": "194",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#C71585"
+  },
+  {
+    "code": "199",
+    "name": "black",
+    "number": "199",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#000000"
+  },
+  {
+    "code": "205",
+    "name": "cadmium yellow lemon",
+    "number": "205",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FFF700"
+  },
+  {
+    "code": "217",
+    "name": "middle cadmium red",
+    "number": "217",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#E30022"
+  },
+  {
+    "code": "219",
+    "name": "deep scarlet red",
+    "number": "219",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#B22222"
+  },
+  {
+    "code": "223",
+    "name": "deep red",
+    "number": "223",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#8B0000"
+  },
+  {
+    "code": "225",
+    "name": "dark red",
+    "number": "225",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#8B0000"
+  },
+  {
+    "code": "226",
+    "name": "alizarin crimson",
+    "number": "226",
+    "lightfastness": 5,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#E32636"
+  },
+  {
+    "code": "230",
+    "name": "cold grey I",
+    "number": "230",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#E6E6FA"
+  },
+  {
+    "code": "231",
+    "name": "cold grey II",
+    "number": "231",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#D3D3D3"
+  },
+  {
+    "code": "232",
+    "name": "cold grey III",
+    "number": "232",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#C0C0C0"
+  },
+  {
+    "code": "233",
+    "name": "cold grey IV",
+    "number": "233",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#A9A9A9"
+  },
+  {
+    "code": "234",
+    "name": "cold grey V",
+    "number": "234",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#808080"
+  },
+  {
+    "code": "235",
+    "name": "cold grey VI",
+    "number": "235",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#696969"
+  },
+  {
+    "code": "246",
+    "name": "Prussian blue",
+    "number": "246",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#003153"
+  },
+  {
+    "code": "247",
+    "name": "indanthrene blue",
+    "number": "247",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#002FA7"
+  },
+  {
+    "code": "249",
+    "name": "mauve",
+    "number": "249",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#E0B0FF"
+  },
+  {
+    "code": "250",
+    "name": "gold",
+    "number": "250",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#FFD700"
+  },
+  {
+    "code": "251",
+    "name": "silver",
+    "number": "251",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#C0C0C0"
+  },
+  {
+    "code": "252",
+    "name": "copper",
+    "number": "252",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#B87333"
+  },
+  {
+    "code": "263",
+    "name": "caput mortuum violet",
+    "number": "263",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#592720"
+  },
+  {
+    "code": "264",
+    "name": "dark phthalo green",
+    "number": "264",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#123524"
+  },
+  {
+    "code": "266",
+    "name": "permanent green",
+    "number": "266",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#00A86B"
+  },
+  {
+    "code": "267",
+    "name": "pine green",
+    "number": "267",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#01796F"
+  },
+  {
+    "code": "268",
+    "name": "green gold",
+    "number": "268",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#6B8E23"
+  },
+  {
+    "code": "270",
+    "name": "warm grey I",
+    "number": "270",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#F5F5DC"
+  },
+  {
+    "code": "271",
+    "name": "warm grey II",
+    "number": "271",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#D3D3D3"
+  },
+  {
+    "code": "272",
+    "name": "warm grey III",
+    "number": "272",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#C0C0C0"
+  },
+  {
+    "code": "273",
+    "name": "warm grey IV",
+    "number": "273",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#A9A9A9"
+  },
+  {
+    "code": "274",
+    "name": "warm grey V",
+    "number": "274",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#808080"
+  },
+  {
+    "code": "275",
+    "name": "warm grey VI",
+    "number": "275",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#696969"
+  },
+  {
+    "code": "276",
+    "name": "chrome oxide green fiery",
+    "number": "276",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#228B22"
+  },
+  {
+    "code": "278",
+    "name": "chrome oxide green",
+    "number": "278",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#228B22"
+  },
+  {
+    "code": "280",
+    "name": "burnt umber",
+    "number": "280",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#8A3324"
+  },
+  {
+    "code": "283",
+    "name": "burnt siena",
+    "number": "283",
+    "lightfastness": 8,
+    "lightfastnessType": "LF",
+    "set": "Polychromos",
+    "hexColor": "#E97451"
+  }
